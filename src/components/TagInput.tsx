@@ -15,12 +15,12 @@ const TagInput: React.FC<TagInputProps> = ({ name }) => {
   const [tags, setTags] = useState<string[]>([]);
 
   const handleTags = (v: string) => {
-    console.log(v);
+    // console.log(v);
     var _t = v
       .split(",")
       .map((x) => x.trim())
       .filter((x) => x.length > 0 );
-    console.log(_t);
+    // console.log(_t);
     setTags(_t);
   };
 

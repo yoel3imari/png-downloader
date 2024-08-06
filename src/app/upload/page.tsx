@@ -37,8 +37,7 @@ export default function page() {
 
           <div className="mb-4 flex flex-col">
             <label htmlFor="description">Description</label>
-            <input
-              type="text"
+            <textarea
               className="border rounded py-1 px-3 h-20"
               id="description"
               {...methods.register("description")}
@@ -61,19 +60,15 @@ export default function page() {
           </div>
 
           {/* multi file upload (png) */}
-          <div className="mb-4 flex flex-col">
+          <div className="mb-4 flex flex-col border-2 border-dashed  p-2 rounded">
             <input
               type="file"
+              {...methods.register('image')}
               id="file"
-              {...methods.register("image")}
               placeholder="PNG Image"
               accept="image/png"
             />
-            {methods.formState.errors.image?.message && (
-              <p className="text-rose-500 m-0">
-                {methods.formState.errors.image.message}
-              </p>
-            )}
+            {methods.formState.errors.image?.message && <p className="text-rose-500 m-0">{methods.formState.errors.image.message.toString()}</p>}
           </div>
 
           <button
